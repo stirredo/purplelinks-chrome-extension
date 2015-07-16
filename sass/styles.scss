@@ -1,0 +1,95 @@
+@import "../bower_components/foundation/scss/normalize.scss";
+
+//Colors
+$purple: #673AB7;
+$light-purple: #EDE7F6;
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+body {
+  width: 250px;
+  color: $purple;
+  padding: 3%;
+  font-size: 62.5%;
+  font-family: "Open Sans Regular", sans-serif;
+  overflow: hidden;
+
+}
+.linkToProfile {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+h2 {
+  font-family: "Open Sans Bold",sans-serif;
+  display: block;
+  margin-top: 15px;
+}
+form {
+  .field {
+    margin: 7px
+  }
+  label {
+    display: block;
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+    font-size: 1.5em;
+    border: 1px solid $light-purple;
+    font-size: 1.2em;
+    padding: 3px;
+  }
+  textarea {
+    width: 100%;
+    border: 1px solid $light-purple;
+    height: 50px;
+  }
+}
+
+.button {
+  color: white;
+  padding: 1em;
+  font-family: "Open Sans Bold";
+  background-color: $purple;
+  border: none;
+  &:hover,&:focus {
+    background-color: darken($purple, 10%);
+  }
+}
+.right {
+  float: right
+}
+
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url('/font/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url('/font/OpenSans-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+.clearFix {
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

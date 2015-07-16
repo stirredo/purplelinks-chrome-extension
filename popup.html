@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Chrome extension</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<p class="message" class="hide"></p>
+<p class="loadingSign">Loading...</p>
+<div id="addBookmarkForm" class="hide">
+    <a href="http://del.dev/user" class="linkToProfile" target="_blank">Go to your bookmarks</a>
+
+    <h2>Purplelinks - Add bookmark</h2>
+
+    <form action="http://del.dev/bookmarks/add" id="bookmarkForm" method="post">
+        <div class="field">
+            <label for="url">Url:</label>
+            <input type="text" name="url" id="url"/>
+
+        </div>
+        <div class="field">
+            <label for="Title">Title:</label>
+            <input type="text" name="title" id="title"/>
+
+        </div>
+        <div class="field">
+            <label for="tags">Tags (Comma separated):</label>
+            <input type="text" name="tags" id="tags"/>
+
+        </div>
+        <div class="field">
+            <label for="comment">Description:</label>
+            <textarea name="comment" id="comment"></textarea>
+
+        </div>
+        <div class="field clearFix">
+            <input type="submit" value="Save Bookmark" class="button right"/>
+        </div>
+    </form>
+</div>
+<div id="loginForm" class="hide">
+    <h2>PurpleLinks</h2>
+
+    <h3>You need to login first: </h3>
+
+    <form action="http://del.dev/login" id="login" method="post">
+        <div class="field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div class="field">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <div class="field clearFix">
+            <input type="submit" value="Login" class="button right">
+        </div>
+    </form>
+    <div class="loginFormMessage error"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "learn-chrome-extension",
+  "version": "0.0.0",
+  "authors": [
+    "stirredo <stirredo@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "foundation": "~5.5.2",
+    "selectize": "~0.12.1",
+    "parsleyjs": "~2.1.2"
+  }
+}
