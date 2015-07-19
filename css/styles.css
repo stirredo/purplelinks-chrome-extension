@@ -338,8 +338,16 @@ h2 {
   display: block;
   margin-top: 15px; }
 
+.deleteButton {
+  float: left; }
+  .deleteButton a {
+    text-decoration: none;
+    color: #673AB7; }
+    .deleteButton a:hover {
+      color: red; }
+
 form .field {
-  margin: 7px; }
+  margin: 7px 0; }
 form label {
   display: block; }
 form input[type=text], form input[type=password] {

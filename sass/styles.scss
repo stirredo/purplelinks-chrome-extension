@@ -29,9 +29,20 @@ h2 {
   display: block;
   margin-top: 15px;
 }
+.deleteButton {
+  float: left;
+  a {
+    text-decoration: none;
+    color: $purple;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
 form {
   .field {
-    margin: 7px
+    margin: 7px 0;
   }
   label {
     display: block;
