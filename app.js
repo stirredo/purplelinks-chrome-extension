@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+        var tab = getTabDetails();
         $('#login').submit(function (e) {
             var form = $(this);
             $.ajax('http://del.dev/login', {
@@ -137,18 +137,22 @@ $(document).ready(function () {
             // Set form action to edit
             var $formElement = $('#addBookmarkForm').find('form').first();
             var editUrl = "http://del.dev/bookmarks/edit";
-            $formElement.attr('action', 'http://del.dev/bookmarks/edit');
+            $formElement.attr('action', editUrl);
 
             //Set url input box as disabled
             var $urlInputBox = $formElement.find('#url');
             $urlInputBox.prop('disabled', 'disabled');
+
+            //show delete button
+            var $deleteButton = $formElement.find('.deleteButton').first();
+            $deleteButton.removeClass('hide');
 
             showBookmarkForm();
 
         }
 
         function init() {
-            var tab = getTabDetails();
+
             checkLogin()
                 .done(function (response) {
                     if (response == "true") {
@@ -174,6 +178,42 @@ $(document).ready(function () {
                 });
 
         }
+        function showMessage(message, hide) {
+            $('.message').text(message);
+            $('.message').removeClass('hide');
+            if(hide != undefined && hide == true) {
+                $('#addBookmarkForm').addClass('hide');
+                $('#loginForm').addClass('hide');
+                $('.loadingSign').addClass('hide');
+            }
+        }
+        //Code for delete link
+        function deleteBookmark() {
+            var bookmarkUrl = getTabDetails().url;
+            var ajaxSettings = {
+                url: 'http://del.dev/bookmark/delete',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    'url': tab.url
+                },
+                'success': function(response) {
+                    if (response.result == true) {
+                        showMessage('Bookmark deleted successfully.', true);
+                    } else {
+                        showMessage("Bookmark couldn't be deleted.")
+                    }
+
+                }
+            }
+            $.ajax(ajaxSettings);
+        }
+
+        $('#addBookmarkForm').on('click', '.deleteButton', function(e) {
+            deleteBookmark();
+            e.preventDefault();
+
+        });
 
         init();
 
